@@ -1,0 +1,35 @@
+# ./.tmuxinator.yml
+
+name: tmux-config
+root: ./
+
+windows:
+  - (git):
+      layout: main-vertical
+      panes:
+        -
+  - (master):
+      layout: main-vertical
+      panes:
+        - cd master
+  - (slaves):
+      layout: tiled
+      synchronize: after
+      panes:
+        # open pane in a folder and name pane as a folder
+        - cd slave01 && tmux select-pane -t 2.0 -T slave01
+        - cd slave02 && tmux select-pane -t 2.1 -T slave02
+        - cd slave03 && tmux select-pane -t 2.2 -T slave03
+        - cd slave04 && tmux select-pane -t 2.3 -T slave04
+        - cd slave05 && tmux select-pane -t 2.4 -T slave05
+        - cd slave06 && tmux select-pane -t 2.5 -T slave06
+        - cd slave07 && tmux select-pane -t 2.6 -T slave07
+        - cd slave08 && tmux select-pane -t 2.7 -T slave08
+        - cd slave09 && tmux select-pane -t 2.8 -T slave09
+        - cd slave10 && tmux select-pane -t 2.9 -T slave10
+        - cd slave11 && tmux select-pane -t 2.10 -T slave11
+  - (extras):
+      layout: even-vertical
+      panes:
+        - cd _extra01 && tmux select-pane -t 3.0 -T _extra01
+        - cd _extra02 && tmux select-pane -t 3.1 -T _extra02
